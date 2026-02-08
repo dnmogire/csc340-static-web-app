@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form • Lumenrise Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Lumenrise Gallery</span>
+      </div>
+      <nav>
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink" href="details.html">Details</a>
+        <a class="navlink" href="about.html">About</a>
+        <a class="navlink active" href="form.html">Form</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Character Submission Form</h1>
+      <p>
+        This form is for collecting all character details. Since this is a static site, submissions won’t be stored,
+        but the form demonstrates realistic input fields used in a real app.
+      </p>
+    </section>
+
+    <section class="section">
+      <form>
+        <div>
+          <label for="name">Character Name</label>
+          <input id="name" name="name" placeholder="e.g., Nova Kai" required />
+        </div>
+
+        <div>
+          <label for="alias">Alias / Title</label>
+          <input id="alias" name="alias" placeholder="e.g., Skyline Sentinel" required />
+        </div>
+
+        <div>
+          <label for="role">Role</label>
+          <select id="role" name="role" required>
+            <option value="">Choose one…</option>
+            <option>Hero</option>
+            <option>Anti-Hero</option>
+            <option>Villain</option>
+            <option>Sidekick</option>
+            <option>Mentor</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="faction">Faction / Team</label>
+          <input id="faction" name="faction" placeholder="e.g., Aether Guard" required />
+        </div>
+
+        <div>
+          <label for="power">Power / Ability</label>
+          <input id="power" name="power" placeholder="Describe the main power" required />
+        </div>
+
+        <div>
+          <label for="weakness">Weakness / Limitation</label>
+          <input id="weakness" name="weakness" placeholder="What makes the character vulnerable?" required />
+        </div>
+
+        <div>
+          <label for="first">First Appearance</label>
+          <input id="first" name="firstAppearance" placeholder="e.g., Issue #1 (fictional)" required />
+        </div>
+
+        <div>
+          <label for="image">Image URL</label>
+          <input id="image" name="image" placeholder="https://example.com/image.jpg" required />
+        </div>
+
+        <div class="full">
+          <label for="summary">Short Summary (1–2 sentences)</label>
+          <textarea id="summary" name="summary" placeholder="A short summary for the home page cards..." required></textarea>
+        </div>
+
+        <div class="full">
+          <label for="bio">Full Background / Bio</label>
+          <textarea id="bio" name="bio" placeholder="Write a longer description for the details page..." required></textarea>
+        </div>
+
+        <div class="full actions">
+          <button class="btn primary" type="submit">Submit (demo)</button>
+          <a class="btn" href="index.html">Cancel</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    Note: This is a static prototype, so the submit button does not save data anywhere.
+  </footer>
+
+  <script>
+    // Prevent reload; show a quick demo message.
+    document.querySelector("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Submitted! (Demo only — static sites do not store data.)");
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

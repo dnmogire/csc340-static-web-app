@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About • Lumenrise Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Lumenrise Gallery</span>
+      </div>
+      <nav>
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink" href="details.html">Details</a>
+        <a class="navlink active" href="about.html">About</a>
+        <a class="navlink" href="form.html">Form</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>About This Static Web App</h1>
+      <p>
+        This project is a prototype static website for a fictional character gallery.
+        It uses only HTML, CSS, and JavaScript—no databases or servers—so it runs perfectly on GitHub Pages.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="kv">
+        <div>
+          <h2 style="margin-top:0;">Design Goals</h2>
+          <ul style="color:var(--muted);">
+            <li><strong>Readable:</strong> clear typography, consistent spacing, simple layout.</li>
+            <li><strong>Realistic:</strong> character profiles include role, faction, powers, weaknesses, and background.</li>
+            <li><strong>Usable:</strong> navigation is consistent on every page and the home search filters instantly.</li>
+            <li><strong>Maintainable:</strong> character data is stored in JavaScript arrays for easy updates.</li>
+          </ul>
+
+          <p style="color:var(--muted);">
+            If this were upgraded to a dynamic app later, the same structure could connect to an API and database.
+            For this assignment, the goal is a clean static prototype that looks professional and is easy to navigate.
+          </p>
+
+          <div class="actions">
+            <a class="btn primary" href="index.html">Go to Home</a>
+            <a class="btn" href="details.html">View Details</a>
+            <a class="btn" href="form.html">Open the Form</a>
+          </div>
+        </div>
+
+        <div>
+          <h2 style="margin-top:0;">Project Image</h2>
+          <img
+            src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?auto=format&fit=crop&w=900&q=60"
+            alt="Abstract sci-fi city lights"
+            style="width:100%; border-radius:18px; border:1px solid var(--border);"
+          />
+          <p style="color:var(--muted); margin-bottom:0;">
+            This image supports the sci-fi theme and gives the site a consistent vibe.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Static site deployed with GitHub Pages (main branch, root folder).
+  </footer>
+</body>
+</html>

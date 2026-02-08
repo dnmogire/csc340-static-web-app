@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lumenrise Character Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Lumenrise Gallery</span>
+      </div>
+      <nav>
+        <a class="navlink active" href="index.html">Home</a>
+        <a class="navlink" href="details.html">Details</a>
+        <a class="navlink" href="about.html">About</a>
+        <a class="navlink" href="form.html">Form</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Fictional Character Gallery</h1>
+      <p>
+        Welcome to Lumenrise—an original sci-fi setting with heroes, anti-heroes, and villains.
+        Use the search bar to quickly find a character by name, alias, faction, or role.
+      </p>
+    </section>
+
+    <div class="toolbar">
+      <div class="search" role="search">
+        <span aria-hidden="true">🔎</span>
+        <input id="search" type="text" placeholder="Search characters (name, alias, role, faction)..." />
+      </div>
+      <span class="badge" id="count">5 shown</span>
+    </div>
+
+    <section>
+      <div class="grid" id="grid" aria-label="Character cards"></div>
+    </section>
+  </main>
+
+  <footer>
+    Built as a static web app prototype for CSC 340. Theme and characters are original and fictional.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
