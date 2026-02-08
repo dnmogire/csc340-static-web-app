@@ -3,281 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Details - Manchester United Gallery</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <title>Player Details - Football Gallery</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .details-hero {
-            background: linear-gradient(135deg, var(--black) 0%, var(--red-dark) 100%);
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-        }
-
-        .details-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 5rem;
-            color: var(--white);
-            letter-spacing: 6px;
-            margin-bottom: 1rem;
-        }
-
-        .details-subtitle {
-            font-size: 1.3rem;
-            color: var(--gold);
-            letter-spacing: 3px;
-        }
-
-        .stats-section {
-            padding: 5rem 2rem;
-            background: var(--white);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .stat-card {
-            background: var(--grey-light);
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--red-primary);
-            background: var(--white);
-            box-shadow: var(--shadow);
-        }
-
-        .stat-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .stat-value {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 3.5rem;
-            color: var(--red-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            color: var(--grey-medium);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .performance-section {
-            padding: 5rem 2rem;
-            background: var(--grey-light);
-        }
-
-        .section-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 3.5rem;
-            text-align: center;
-            color: var(--grey-dark);
-            letter-spacing: 4px;
-            margin-bottom: 3rem;
-        }
-
-        .performance-cards {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .performance-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .performance-card h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            color: var(--red-primary);
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-        }
-
-        .metric {
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--grey-light);
-        }
-
-        .metric:last-child {
-            border-bottom: none;
-        }
-
-        .metric-name {
-            color: var(--grey-medium);
-            font-weight: 600;
-        }
-
-        .metric-value {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            color: var(--grey-dark);
-        }
-    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <nav>
         <div class="nav-container">
-            <div class="logo">
-                <span class="logo-text">MAN UTD</span>
-                <span class="logo-subtitle">GALLERY</span>
-            </div>
-            <ul class="nav-links">
+            <h1>Football Gallery</h1>
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="details.html" class="active">Details</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="form.html">Form</a></li>
+                <li><a href="form.html">Add Player</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="details-hero">
-        <h1 class="details-title">PLAYER DETAILS</h1>
-        <p class="details-subtitle">Comprehensive Statistics & Performance Metrics</p>
-    </section>
+    <main>
+        <div class="detail-page">
+            <h2>Bruno Fernandes - Player Profile</h2>
+            
+            <div class="player-info">
+                <p><strong>Full Name:</strong> Bruno Miguel Borges Fernandes</p>
+                <p><strong>Position:</strong> Midfielder</p>
+                <p><strong>Nationality:</strong> Portugal</p>
+                <p><strong>Jersey Number:</strong> 8</p>
+                <p><strong>Current Club:</strong> Manchester United</p>
+                <p><strong>Date of Birth:</strong> September 8, 1994</p>
+                <p><strong>Height:</strong> 179 cm</p>
+            </div>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-icon">⚽</div>
-                <div class="stat-value">127</div>
-                <div class="stat-label">Total Goals</div>
+            <h3 style="margin-top: 30px; color: #2c3e50;">Career Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="number">89</div>
+                    <div class="label">Goals</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">67</div>
+                    <div class="label">Assists</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">234</div>
+                    <div class="label">Appearances</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">12</div>
+                    <div class="label">Trophies</div>
+                </div>
             </div>
-            <div class="stat-card">
-                <div class="stat-icon">🎯</div>
-                <div class="stat-value">89</div>
-                <div class="stat-label">Assists</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">👟</div>
-                <div class="stat-value">342</div>
-                <div class="stat-label">Appearances</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">🏆</div>
-                <div class="stat-value">15</div>
-                <div class="stat-label">Trophies Won</div>
+
+            <h3 style="margin-top: 30px; color: #2c3e50;">About</h3>
+            <p style="line-height: 1.8; margin-top: 10px;">
+                Bruno Fernandes is a Portuguese professional footballer who plays as a midfielder for 
+                Manchester United and the Portugal national team. He is known for his creativity, 
+                vision, and goal-scoring ability from midfield. Since joining Manchester United in 
+                January 2020, he has become one of the team's most important players and serves as 
+                the club captain.
+            </p>
+            
+            <p style="line-height: 1.8; margin-top: 15px;">
+                Fernandes began his career at Italian clubs Novara, Udinese, and Sampdoria before 
+                moving to Sporting CP in 2017. His exceptional performances in Portugal earned him 
+                a move to Manchester United, where he quickly became a fan favorite. He has won 
+                several individual awards and is considered one of the best midfielders in the 
+                Premier League.
+            </p>
+
+            <div style="margin-top: 30px;">
+                <p><a href="index.html" style="color: #3498db;">← Back to Gallery</a></p>
+                <p><a href="about.html" style="color: #3498db;">Learn More About This Project →</a></p>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Performance Section -->
-    <section class="performance-section">
-        <h2 class="section-title">SEASON PERFORMANCE</h2>
-        <div class="performance-cards">
-            <div class="performance-card">
-                <h3>Bruno Fernandes</h3>
-                <div class="metric">
-                    <span class="metric-name">Goals</span>
-                    <span class="metric-value">18</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-name">Assists</span>
-                    <span class="metric-value">14</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-name">Matches Played</span>
-                    <span class="metric-value">42</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-name">Pass Accuracy</span>
-                    <span class="metric-value">84%</span>
-                </div>
-            </div>
-
-            <div class="performance-card">
-                <h3>Marcus Rashford</h3>
-                <div class="metric">
-                    <span class="metric-name">Goals</span>
-                    <span class="metric-value">24</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-name">Assists</span>
-                    <span class="metric-value">11</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-name">Matches Played</span>
-                    <span class="metric-value">38</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-name">Shot Accuracy</span>
-                    <span class="metric-value">67%</span>
-                </div>
-            </div>
-
-            <div class="performance-card">
-                <h3>Casemiro</h3>
-                <div class="metric">
-                    <span class="metric-name">Tackles Won</span>
-                    <span class="metric-value">156</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-name">Interceptions</span>
-                    <span class="metric-value">89</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-name">Matches Played</span>
-                    <span class="metric-value">41</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-name">Pass Accuracy</span>
-                    <span class="metric-value">91%</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>MAN UTD GALLERY</h3>
-                    <p>Static Web App prototype for CSC 340</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="details.html">Details</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="form.html">Form</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>About</h4>
-                    <p>A showcase of Manchester United's current squad with search and filter capabilities.</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Manchester United Player Gallery. Educational project for CSC 340.</p>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2025 Football Players Gallery | CSC 340 Assignment</p>
     </footer>
 </body>
 </html>

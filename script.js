@@ -1,167 +1,99 @@
-// Player data
+// Player data array
 const players = [
     {
         name: "Bruno Fernandes",
         position: "Midfielder",
         nationality: "Portugal",
         number: 8,
-        role: "Captain & Playmaker",
-        summary: "Creative midfielder and team captain known for exceptional vision, passing ability, and goal-scoring prowess from midfield."
+        club: "Manchester United",
+        summary: "Portuguese midfielder known for his creativity and leadership on the field. Captain of Manchester United with excellent passing and goal-scoring abilities."
     },
     {
-        name: "Marcus Rashford",
+        name: "Matheus Cunha",
         position: "Forward",
-        nationality: "England",
-        number: 10,
-        role: "Winger & Forward",
-        summary: "Pacey forward with clinical finishing and dribbling skills. Known for his social activism and community work off the pitch."
+        nationality: "Brazil",
+        number: 12,
+        club: "Wolverhampton",
+        summary: "Brazilian forward with great dribbling skills and finishing ability. Known for his versatility in attacking positions and technical prowess."
     },
     {
         name: "Casemiro",
         position: "Midfielder",
         nationality: "Brazil",
         number: 18,
-        role: "Defensive Midfielder",
-        summary: "World-class defensive midfielder providing protection to the backline with exceptional tackling and positioning."
+        club: "Manchester United",
+        summary: "Defensive midfielder with exceptional tackling and positioning. World Cup winner with Brazil and multiple Champions League titles."
     },
     {
         name: "Lisandro Martínez",
         position: "Defender",
         nationality: "Argentina",
         number: 6,
-        role: "Center Back",
-        summary: "Tenacious defender known for his aggressive style, ball-playing ability, and leadership at the heart of defense."
+        club: "Manchester United",
+        summary: "Argentine defender known for his aggressive style and ball-playing ability. World Cup winner and a key player in Manchester United's defense."
     },
     {
-        name: "André Onana",
+        name: "Senne Lammens",
         position: "Goalkeeper",
-        nationality: "Cameroon",
-        number: 24,
-        role: "Goalkeeper",
-        summary: "Modern goalkeeper excellent with his feet, commanding presence in the box, and shot-stopping abilities."
+        nationality: "Belgium",
+        number: 1,
+        club: "Club Brugge",
+        summary: "Belgian goalkeeper with excellent shot-stopping abilities and good distribution. Young talent showing promise in the Belgian league."
     }
 ];
 
-// Initialize page
-document.addEventListener('DOMContentLoaded', () => {
-    renderPlayers(players);
+// Load players when page loads
+window.addEventListener('DOMContentLoaded', function() {
+    displayPlayers(players);
     setupSearch();
-    animateOnScroll();
 });
 
-// Render player cards
-function renderPlayers(playersToRender) {
-    const grid = document.getElementById('playersGrid');
-    const noResults = document.getElementById('noResults');
-    const resultCount = document.getElementById('resultCount');
+// Function to display players
+function displayPlayers(playerList) {
+    const gallery = document.getElementById('playerGallery');
     
-    if (playersToRender.length === 0) {
-        grid.innerHTML = '';
-        noResults.classList.add('show');
-        resultCount.textContent = '0';
+    if (playerList.length === 0) {
+        gallery.innerHTML = '<p style="text-align: center; padding: 20px;">No players found.</p>';
         return;
     }
     
-    noResults.classList.remove('show');
-    resultCount.textContent = playersToRender.length;
+    gallery.innerHTML = '';
     
-    grid.innerHTML = playersToRender.map((player, index) => `
-        <div class="player-card" style="animation: fadeInUp 0.6s ease ${index * 0.1}s both">
-            <div class="player-image">
-                #${player.number}
-            </div>
+    playerList.forEach(player => {
+        const card = document.createElement('div');
+        card.className = 'player-card';
+        
+        card.innerHTML = `
+            <h3>${player.name}</h3>
+            <span class="position">${player.position}</span>
             <div class="player-info">
-                <h3 class="player-name">${player.name}</h3>
-                <span class="player-position">${player.position}</span>
-                <div class="player-details">
-                    <div class="detail-row">
-                        <span class="detail-label">Nationality</span>
-                        <span class="detail-value">${player.nationality}</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Number</span>
-                        <span class="detail-value">#${player.number}</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Role</span>
-                        <span class="detail-value">${player.role}</span>
-                    </div>
-                </div>
-                <p class="player-summary">${player.summary}</p>
+                <p><strong>Nationality:</strong> ${player.nationality}</p>
+                <p><strong>Number:</strong> #${player.number}</p>
+                <p><strong>Club:</strong> ${player.club}</p>
             </div>
-        </div>
-    `).join('');
+            <div class="player-summary">
+                ${player.summary}
+            </div>
+        `;
+        
+        gallery.appendChild(card);
+    });
 }
 
 // Setup search functionality
 function setupSearch() {
-    const searchInput = document.getElementById('searchInput');
+    const searchBar = document.getElementById('searchBar');
     
-    searchInput.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase().trim();
+    searchBar.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
         
-        if (searchTerm === '') {
-            renderPlayers(players);
-            return;
-        }
-        
-        const filteredPlayers = players.filter(player => {
-            return (
-                player.name.toLowerCase().includes(searchTerm) ||
-                player.position.toLowerCase().includes(searchTerm) ||
-                player.nationality.toLowerCase().includes(searchTerm) ||
-                player.role.toLowerCase().includes(searchTerm) ||
-                player.number.toString().includes(searchTerm)
-            );
+        const filtered = players.filter(player => {
+            return player.name.toLowerCase().includes(searchTerm) ||
+                   player.position.toLowerCase().includes(searchTerm) ||
+                   player.nationality.toLowerCase().includes(searchTerm) ||
+                   player.club.toLowerCase().includes(searchTerm);
         });
         
-        renderPlayers(filteredPlayers);
-    });
-    
-    // Clear search on Escape key
-    searchInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            searchInput.value = '';
-            renderPlayers(players);
-        }
+        displayPlayers(filtered);
     });
 }
-
-// Animate elements on scroll
-function animateOnScroll() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements that should animate
-    document.querySelectorAll('.player-card, .search-section, .footer-section').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-}
-
-// Add smooth scrolling to navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
