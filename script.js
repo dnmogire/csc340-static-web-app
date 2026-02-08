@@ -1,109 +1,167 @@
+// Player data
 const players = [
-  {
-    id: "bruno-fernandes",
-    name: "Bruno Fernandes",
-    position: "Attacking Midfielder",
-    squadNumber: "8",
-    nationality: "Portugal",
-    role: "Captain / Creator",
-    strengths: "Chance creation, leadership, passing range, pressing",
-    weakness: "High-risk passes can lead to turnovers",
-    bio: "Bruno is the team’s main creator and tempo-setter. He leads with intensity, demands the ball, and consistently produces chances through through-balls, switches of play, and quick combinations.",
-    image: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=60",
-    summary: "United’s creative engine — constant chances, constant energy."
-  },
-  {
-    id: "marcus-rashford",
-    name: "Marcus Rashford",
-    position: "Forward / Winger",
-    squadNumber: "10",
-    nationality: "England",
-    role: "Direct attacker",
-    strengths: "Speed in behind, shooting from the left, counter-attacks",
-    weakness: "Form can be streaky; decision-making under pressure",
-    bio: "Rashford is most dangerous running into space and attacking the box from the left. When he’s confident, he stretches defenses and creates big moments with direct dribbling and powerful finishing.",
-    image: "https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=800&q=60",
-    summary: "Explosive threat who can change a match in one run."
-  },
-  {
-    id: "kobbie-mainoo",
-    name: "Kobbie Mainoo",
-    position: "Central Midfielder",
-    squadNumber: "37",
-    nationality: "England",
-    role: "Press-resistant connector",
-    strengths: "Composure, close control, smart positioning, ball retention",
-    weakness: "Still developing physicality and match management",
-    bio: "Mainoo plays with calm beyond his years. He receives under pressure, turns away from markers, and keeps United moving forward with simple but smart decisions.",
-    image: "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=800&q=60",
-    summary: "Young midfielder with elite calm and clean technique."
-  },
-  {
-    id: "lisandro-martinez",
-    name: "Lisandro Martínez",
-    position: "Centre-Back",
-    squadNumber: "6",
-    nationality: "Argentina",
-    role: "Aggressive defender",
-    strengths: "Tackling, anticipation, passing out from the back, intensity",
-    weakness: "Can be targeted aerially by taller forwards",
-    bio: "Martínez brings aggression, leadership, and ball progression from defense. He steps into midfield, breaks lines with passes, and sets the tone with front-foot defending.",
-    image: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=60",
-    summary: "Front-foot defender who raises the team’s intensity."
-  },
-  {
-    id: "andre-onana",
-    name: "André Onana",
-    position: "Goalkeeper",
-    squadNumber: "24",
-    nationality: "Cameroon",
-    role: "Sweeper-keeper",
-    strengths: "Distribution, sweeping, composure in build-up",
-    weakness: "High-risk style can punish mistakes",
-    bio: "Onana is a modern goalkeeper who helps United play out from the back. He’s comfortable under pressure and can launch attacks with sharp passing, but the aggressive approach demands focus.",
-    image: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=60",
-    summary: "Build-up goalkeeper who helps United play through pressure."
-  }
+    {
+        name: "Bruno Fernandes",
+        position: "Midfielder",
+        nationality: "Portugal",
+        number: 8,
+        role: "Captain & Playmaker",
+        summary: "Creative midfielder and team captain known for exceptional vision, passing ability, and goal-scoring prowess from midfield."
+    },
+    {
+        name: "Marcus Rashford",
+        position: "Forward",
+        nationality: "England",
+        number: 10,
+        role: "Winger & Forward",
+        summary: "Pacey forward with clinical finishing and dribbling skills. Known for his social activism and community work off the pitch."
+    },
+    {
+        name: "Casemiro",
+        position: "Midfielder",
+        nationality: "Brazil",
+        number: 18,
+        role: "Defensive Midfielder",
+        summary: "World-class defensive midfielder providing protection to the backline with exceptional tackling and positioning."
+    },
+    {
+        name: "Lisandro Martínez",
+        position: "Defender",
+        nationality: "Argentina",
+        number: 6,
+        role: "Center Back",
+        summary: "Tenacious defender known for his aggressive style, ball-playing ability, and leadership at the heart of defense."
+    },
+    {
+        name: "André Onana",
+        position: "Goalkeeper",
+        nationality: "Cameroon",
+        number: 24,
+        role: "Goalkeeper",
+        summary: "Modern goalkeeper excellent with his feet, commanding presence in the box, and shot-stopping abilities."
+    }
 ];
 
-function qs(sel){ return document.querySelector(sel); }
+// Initialize page
+document.addEventListener('DOMContentLoaded', () => {
+    renderPlayers(players);
+    setupSearch();
+    animateOnScroll();
+});
 
-function render(list){
-  const grid = qs("#grid");
-  grid.innerHTML = "";
-
-  list.forEach(p => {
-    const card = document.createElement("article");
-    card.className = "card";
-
-    card.innerHTML = `
-      <img src="${p.image}" alt="${p.name} image">
-      <div class="card-content">
-        <h3>${p.name}</h3>
-        <div class="meta">#${p.squadNumber} • ${p.position} • ${p.nationality}</div>
-        <p class="summary">${p.summary}</p>
-        <div class="actions">
-          <a class="btn primary" href="details.html?id=${encodeURIComponent(p.id)}">View details</a>
-          <a class="btn" href="form.html">Add a player</a>
+// Render player cards
+function renderPlayers(playersToRender) {
+    const grid = document.getElementById('playersGrid');
+    const noResults = document.getElementById('noResults');
+    const resultCount = document.getElementById('resultCount');
+    
+    if (playersToRender.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.add('show');
+        resultCount.textContent = '0';
+        return;
+    }
+    
+    noResults.classList.remove('show');
+    resultCount.textContent = playersToRender.length;
+    
+    grid.innerHTML = playersToRender.map((player, index) => `
+        <div class="player-card" style="animation: fadeInUp 0.6s ease ${index * 0.1}s both">
+            <div class="player-image">
+                #${player.number}
+            </div>
+            <div class="player-info">
+                <h3 class="player-name">${player.name}</h3>
+                <span class="player-position">${player.position}</span>
+                <div class="player-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Nationality</span>
+                        <span class="detail-value">${player.nationality}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Number</span>
+                        <span class="detail-value">#${player.number}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Role</span>
+                        <span class="detail-value">${player.role}</span>
+                    </div>
+                </div>
+                <p class="player-summary">${player.summary}</p>
+            </div>
         </div>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
-
-  qs("#count").textContent = `${list.length} shown`;
+    `).join('');
 }
 
-function filter(){
-  const q = qs("#search").value.trim().toLowerCase();
-  const filtered = players.filter(p => {
-    const blob = `${p.name} ${p.position} ${p.nationality} ${p.role} ${p.strengths} ${p.summary}`.toLowerCase();
-    return blob.includes(q);
-  });
-  render(filtered);
+// Setup search functionality
+function setupSearch() {
+    const searchInput = document.getElementById('searchInput');
+    
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase().trim();
+        
+        if (searchTerm === '') {
+            renderPlayers(players);
+            return;
+        }
+        
+        const filteredPlayers = players.filter(player => {
+            return (
+                player.name.toLowerCase().includes(searchTerm) ||
+                player.position.toLowerCase().includes(searchTerm) ||
+                player.nationality.toLowerCase().includes(searchTerm) ||
+                player.role.toLowerCase().includes(searchTerm) ||
+                player.number.toString().includes(searchTerm)
+            );
+        });
+        
+        renderPlayers(filteredPlayers);
+    });
+    
+    // Clear search on Escape key
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            searchInput.value = '';
+            renderPlayers(players);
+        }
+    });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  render(players);
-  qs("#search").addEventListener("input", filter);
+// Animate elements on scroll
+function animateOnScroll() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements that should animate
+    document.querySelectorAll('.player-card, .search-section, .footer-section').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+}
+
+// Add smooth scrolling to navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
 });

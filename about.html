@@ -1,80 +1,313 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About • Man United Gallery</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Manchester United Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, var(--red-primary) 0%, var(--red-dark) 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .about-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            color: var(--white);
+            letter-spacing: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .about-subtitle {
+            font-size: 1.3rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .content-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: var(--red-primary);
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--grey-medium);
+            margin-bottom: 1.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-box {
+            background: var(--grey-light);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-box:hover {
+            background: var(--red-primary);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-box h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .feature-box:hover h3 {
+            color: var(--gold);
+        }
+
+        .tech-stack {
+            background: var(--grey-light);
+            padding: 4rem 2rem;
+        }
+
+        .tech-items {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .tech-item {
+            background: var(--white);
+            padding: 1.5rem 2.5rem;
+            border-radius: 30px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            color: var(--red-primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow);
+        }
+
+        .project-info {
+            background: var(--black);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .project-info h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+            margin-bottom: 2rem;
+        }
+
+        .info-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-item {
+            padding: 2rem;
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            color: var(--grey-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--red-primary);
+            letter-spacing: 2px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="navbar">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <span>Man United Gallery</span>
-      </div>
-      <nav>
-        <a class="navlink" href="index.html">Home</a>
-        <a class="navlink" href="details.html">Details</a>
-        <a class="navlink active" href="about.html">About</a>
-        <a class="navlink" href="form.html">Form</a>
-      </nav>
-    </div>
-  </header>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">MAN UTD</span>
+                <span class="logo-subtitle">GALLERY</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="details.html">Details</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="form.html">Form</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <main>
-    <section class="hero">
-      <h1>About This Project</h1>
-      <p>
-        This is a static website prototype built for a class assignment. It focuses on a Manchester United themed
-        player gallery and demonstrates the basics of multi-page navigation, layout, and simple JavaScript interactivity.
-      </p>
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <h1 class="about-title">ABOUT THE PROJECT</h1>
+        <p class="about-subtitle">Static Web Application for CSC 340</p>
     </section>
 
-    <section class="section">
-      <div class="kv">
-        <div>
-          <h2 style="margin-top:0;">What this site demonstrates</h2>
-          <p style="color:var(--muted);">
-            This project is intentionally “static,” meaning there is no server, no database, and no login.
-            Everything loads instantly from simple files (HTML, CSS, and JavaScript). That makes it perfect for GitHub Pages.
-          </p>
-          <ul style="color:var(--muted);">
-            <li><strong>Home gallery:</strong> 5 players with summaries and a search bar filter.</li>
-            <li><strong>Details page:</strong> deeper profile data for one player and quick links to other pages.</li>
-            <li><strong>About page:</strong> longer explanation and a theme image for a more realistic website feel.</li>
-            <li><strong>Form page:</strong> inputs for all player details (like a real submission form).</li>
-          </ul>
-          <p style="color:var(--muted);">
-            If this were upgraded later, the form could send data to a database and the gallery could pull player
-            information from an API. For this assignment, the goal is clean structure, readability, and deployment success.
-          </p>
-
-          <div class="actions">
-            <a class="btn primary" href="index.html">Go to Home</a>
-            <a class="btn" href="details.html">Open Details</a>
-            <a class="btn" href="form.html">Open Form</a>
-          </div>
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="content-section">
+            <h2>Overview</h2>
+            <p>
+                The Manchester United Player Gallery is a static web application prototype developed as part of the CSC 340 course. 
+                This project demonstrates fundamental web development skills including HTML5, CSS3, and JavaScript, while showcasing 
+                modern design principles and responsive layout techniques.
+            </p>
+            <p>
+                The application features a curated selection of current Manchester United players, complete with biographical 
+                information, statistics, and a powerful search functionality that allows users to filter players by various criteria.
+            </p>
         </div>
 
-        <div>
-          <h2 style="margin-top:0;">Theme Image</h2>
-          <img
-            src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=60"
-            alt="Soccer stadium lights"
-            style="width:100%; border-radius:18px; border:1px solid var(--border);"
-          />
-          <p style="color:var(--muted); margin-bottom:0;">
-            The theme image supports the football vibe and makes the about page feel complete.
-          </p>
+        <div class="content-section">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Dynamic Search</h3>
+                    <p>Real-time filtering by name, position, nationality, or role</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>Optimized for desktop, tablet, and mobile devices</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Modern UI</h3>
+                    <p>Clean, professional interface with smooth animations</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Performance</h3>
+                    <p>Lightweight static site with instant load times</p>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="content-section">
+            <h2>Purpose & Goals</h2>
+            <p>
+                This project serves as a practical demonstration of static web development fundamentals. The goals include:
+            </p>
+            <p>
+                ✓ Creating semantic, accessible HTML5 markup<br>
+                ✓ Implementing responsive CSS layouts with modern techniques<br>
+                ✓ Adding interactive functionality with vanilla JavaScript<br>
+                ✓ Designing an engaging, user-friendly interface<br>
+                ✓ Deploying a static site using GitHub Pages
+            </p>
+        </div>
     </section>
-  </main>
 
-  <footer>
-    Deployed with GitHub Pages: main branch, root folder.
-  </footer>
+    <!-- Tech Stack -->
+    <section class="tech-stack">
+        <h2 class="section-title">TECHNOLOGY STACK</h2>
+        <div class="tech-items">
+            <div class="tech-item">HTML5</div>
+            <div class="tech-item">CSS3</div>
+            <div class="tech-item">JavaScript</div>
+            <div class="tech-item">GitHub Pages</div>
+            <div class="tech-item">Google Fonts</div>
+            <div class="tech-item">Responsive Design</div>
+        </div>
+    </section>
+
+    <!-- Project Info -->
+    <section class="project-info">
+        <h2>PROJECT INFORMATION</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">Course</div>
+                <div class="info-value">CSC 340</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Type</div>
+                <div class="info-value">Static Web App</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Year</div>
+                <div class="info-value">2025</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Status</div>
+                <div class="info-value">Active</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MAN UTD GALLERY</h3>
+                    <p>Static Web App prototype for CSC 340</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="details.html">Details</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="form.html">Form</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>A showcase of Manchester United's current squad with search and filter capabilities.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Manchester United Player Gallery. Educational project for CSC 340.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
 
