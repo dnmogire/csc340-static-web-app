@@ -1,68 +1,68 @@
-const characters = [
+const players = [
   {
-    id: "nova-kai",
-    name: "Nova Kai",
-    alias: "Skyline Sentinel",
-    role: "Hero",
-    faction: "Aether Guard",
-    power: "Gravity stitching (can “sew” space for short bursts)",
-    weakness: "Overuse causes vertigo + temporary tunnel vision",
-    firstAppearance: "Issue #1 (fictional)",
-    image: "https://images.unsplash.com/photo-1520975958225-79b0f4aa3f5a?auto=format&fit=crop&w=600&q=60",
-    summary: "A calm protector who stabilizes collapsing zones in the floating city of Lumenrise.",
-    bio: "Nova Kai is known for precision under pressure. She patrols Lumenrise’s sky-bridges, preventing disasters before they happen. Her gravity stitching is powerful but dangerously disorienting if pushed too far."
+    id: "bruno-fernandes",
+    name: "Bruno Fernandes",
+    position: "Attacking Midfielder",
+    squadNumber: "8",
+    nationality: "Portugal",
+    role: "Captain / Creator",
+    strengths: "Chance creation, leadership, passing range, pressing",
+    weakness: "High-risk passes can lead to turnovers",
+    bio: "Bruno is the team’s main creator and tempo-setter. He leads with intensity, demands the ball, and consistently produces chances through through-balls, switches of play, and quick combinations.",
+    image: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=60",
+    summary: "United’s creative engine — constant chances, constant energy."
   },
   {
-    id: "riven-drax",
-    name: "Riven Drax",
-    alias: "Neon Warden",
-    role: "Anti-Hero",
-    faction: "Independent",
-    power: "Light refraction armor (hard-light shields + illusions)",
-    weakness: "Bright sunlight weakens shield cohesion",
-    firstAppearance: "Issue #2 (fictional)",
-    image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=600&q=60",
-    summary: "A street-level protector who bends light to hide civilians and expose corrupt deals.",
-    bio: "Riven walks the line between justice and revenge. He uses hard-light projections to redirect violence, but his tools fail in harsh daylight—forcing him to rely on strategy and allies."
+    id: "marcus-rashford",
+    name: "Marcus Rashford",
+    position: "Forward / Winger",
+    squadNumber: "10",
+    nationality: "England",
+    role: "Direct attacker",
+    strengths: "Speed in behind, shooting from the left, counter-attacks",
+    weakness: "Form can be streaky; decision-making under pressure",
+    bio: "Rashford is most dangerous running into space and attacking the box from the left. When he’s confident, he stretches defenses and creates big moments with direct dribbling and powerful finishing.",
+    image: "https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=800&q=60",
+    summary: "Explosive threat who can change a match in one run."
   },
   {
-    id: "mira-solene",
-    name: "Mira Solène",
-    alias: "Archivist of Ash",
-    role: "Hero",
-    faction: "Cinder Library",
-    power: "Memory ignition (reads object histories via “ember echoes”)",
-    weakness: "Can absorb traumatic memories unintentionally",
-    firstAppearance: "Issue #3 (fictional)",
-    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=60",
-    summary: "A historian-hero who solves mysteries by reading the past imprinted on artifacts.",
-    bio: "Mira’s gift helps recover lost truths. She’s invaluable in investigations, but the emotional toll of carrying others’ memories is heavy—and sometimes dangerous."
+    id: "kobbie-mainoo",
+    name: "Kobbie Mainoo",
+    position: "Central Midfielder",
+    squadNumber: "37",
+    nationality: "England",
+    role: "Press-resistant connector",
+    strengths: "Composure, close control, smart positioning, ball retention",
+    weakness: "Still developing physicality and match management",
+    bio: "Mainoo plays with calm beyond his years. He receives under pressure, turns away from markers, and keeps United moving forward with simple but smart decisions.",
+    image: "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=800&q=60",
+    summary: "Young midfielder with elite calm and clean technique."
   },
   {
-    id: "jax-orrin",
-    name: "Jax Orrin",
-    alias: "Pulse Runner",
-    role: "Hero",
-    faction: "Aether Guard",
-    power: "Bioelectric sprint (short, explosive bursts of speed)",
-    weakness: "Heart rhythm can destabilize under stress",
-    firstAppearance: "Issue #4 (fictional)",
-    image: "https://images.unsplash.com/photo-1520975869010-0f1d5ea4f7aa?auto=format&fit=crop&w=600&q=60",
-    summary: "A rescue specialist who outruns collapsing structures to pull people to safety.",
-    bio: "Jax is fearless and fast—sometimes too fast. He must manage his pulse carefully or risk blackout at the worst moment."
+    id: "lisandro-martinez",
+    name: "Lisandro Martínez",
+    position: "Centre-Back",
+    squadNumber: "6",
+    nationality: "Argentina",
+    role: "Aggressive defender",
+    strengths: "Tackling, anticipation, passing out from the back, intensity",
+    weakness: "Can be targeted aerially by taller forwards",
+    bio: "Martínez brings aggression, leadership, and ball progression from defense. He steps into midfield, breaks lines with passes, and sets the tone with front-foot defending.",
+    image: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=60",
+    summary: "Front-foot defender who raises the team’s intensity."
   },
   {
-    id: "vanta-nyx",
-    name: "Vanta Nyx",
-    alias: "Null Siren",
-    role: "Villain",
-    faction: "Black Choir",
-    power: "Silence field (cancels sound + weakens comms)",
-    weakness: "Needs line-of-sight to expand the field",
-    firstAppearance: "Issue #5 (fictional)",
-    image: "https://images.unsplash.com/photo-1520975682031-a0f5bd02ef91?auto=format&fit=crop&w=600&q=60",
-    summary: "A feared saboteur who shuts down entire districts by erasing communication.",
-    bio: "Vanta’s silence field creates panic and confusion. When teams can’t coordinate, she strikes. Her limitation is visibility—block her sightlines and her power shrinks."
+    id: "andre-onana",
+    name: "André Onana",
+    position: "Goalkeeper",
+    squadNumber: "24",
+    nationality: "Cameroon",
+    role: "Sweeper-keeper",
+    strengths: "Distribution, sweeping, composure in build-up",
+    weakness: "High-risk style can punish mistakes",
+    bio: "Onana is a modern goalkeeper who helps United play out from the back. He’s comfortable under pressure and can launch attacks with sharp passing, but the aggressive approach demands focus.",
+    image: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=60",
+    summary: "Build-up goalkeeper who helps United play through pressure."
   }
 ];
 
@@ -72,22 +72,19 @@ function render(list){
   const grid = qs("#grid");
   grid.innerHTML = "";
 
-  list.forEach(c => {
+  list.forEach(p => {
     const card = document.createElement("article");
     card.className = "card";
-    card.setAttribute("data-name", c.name.toLowerCase());
-    card.setAttribute("data-alias", c.alias.toLowerCase());
-    card.setAttribute("data-role", c.role.toLowerCase());
 
     card.innerHTML = `
-      <img src="${c.image}" alt="${c.name} portrait">
+      <img src="${p.image}" alt="${p.name} image">
       <div class="card-content">
-        <h3>${c.name}</h3>
-        <div class="meta">${c.alias} • ${c.role} • ${c.faction}</div>
-        <p class="summary">${c.summary}</p>
+        <h3>${p.name}</h3>
+        <div class="meta">#${p.squadNumber} • ${p.position} • ${p.nationality}</div>
+        <p class="summary">${p.summary}</p>
         <div class="actions">
-          <a class="btn primary" href="details.html?id=${encodeURIComponent(c.id)}">View details</a>
-          <a class="btn" href="form.html">Suggest a character</a>
+          <a class="btn primary" href="details.html?id=${encodeURIComponent(p.id)}">View details</a>
+          <a class="btn" href="form.html">Add a player</a>
         </div>
       </div>
     `;
@@ -99,14 +96,14 @@ function render(list){
 
 function filter(){
   const q = qs("#search").value.trim().toLowerCase();
-  const filtered = characters.filter(c => {
-    const blob = `${c.name} ${c.alias} ${c.role} ${c.faction} ${c.summary}`.toLowerCase();
+  const filtered = players.filter(p => {
+    const blob = `${p.name} ${p.position} ${p.nationality} ${p.role} ${p.strengths} ${p.summary}`.toLowerCase();
     return blob.includes(q);
   });
   render(filtered);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  render(characters);
+  render(players);
   qs("#search").addEventListener("input", filter);
 });

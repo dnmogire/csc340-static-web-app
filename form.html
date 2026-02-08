@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Form • Lumenrise Gallery</title>
+  <title>Form • Man United Gallery</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -11,7 +11,7 @@
     <div class="navbar">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
-        <span>Lumenrise Gallery</span>
+        <span>Man United Gallery</span>
       </div>
       <nav>
         <a class="navlink" href="index.html">Home</a>
@@ -24,74 +24,72 @@
 
   <main>
     <section class="hero">
-      <h1>Character Submission Form</h1>
+      <h1>Add a Player (Prototype Form)</h1>
       <p>
-        This form is for collecting all character details. Since this is a static site, submissions won’t be stored,
-        but the form demonstrates realistic input fields used in a real app.
+        This is a realistic form layout that collects all player details. Since this is a static website,
+        it doesn’t save submissions — it just demonstrates form inputs and structure.
       </p>
     </section>
 
     <section class="section">
       <form>
         <div>
-          <label for="name">Character Name</label>
-          <input id="name" name="name" placeholder="e.g., Nova Kai" required />
+          <label for="name">Player Name</label>
+          <input id="name" name="name" placeholder="e.g., Bruno Fernandes" required />
         </div>
 
         <div>
-          <label for="alias">Alias / Title</label>
-          <input id="alias" name="alias" placeholder="e.g., Skyline Sentinel" required />
+          <label for="id">Player ID (for URL)</label>
+          <input id="id" name="id" placeholder="e.g., bruno-fernandes" required />
         </div>
 
         <div>
-          <label for="role">Role</label>
-          <select id="role" name="role" required>
-            <option value="">Choose one…</option>
-            <option>Hero</option>
-            <option>Anti-Hero</option>
-            <option>Villain</option>
-            <option>Sidekick</option>
-            <option>Mentor</option>
-          </select>
+          <label for="number">Squad Number</label>
+          <input id="number" name="squadNumber" type="number" min="1" max="99" placeholder="e.g., 8" required />
         </div>
 
         <div>
-          <label for="faction">Faction / Team</label>
-          <input id="faction" name="faction" placeholder="e.g., Aether Guard" required />
+          <label for="position">Position</label>
+          <input id="position" name="position" placeholder="e.g., Attacking Midfielder" required />
         </div>
 
         <div>
-          <label for="power">Power / Ability</label>
-          <input id="power" name="power" placeholder="Describe the main power" required />
+          <label for="nationality">Nationality</label>
+          <input id="nationality" name="nationality" placeholder="e.g., Portugal" required />
         </div>
 
         <div>
-          <label for="weakness">Weakness / Limitation</label>
-          <input id="weakness" name="weakness" placeholder="What makes the character vulnerable?" required />
+          <label for="role">Role on Team</label>
+          <input id="role" name="role" placeholder="e.g., Captain / Creator" required />
         </div>
 
-        <div>
-          <label for="first">First Appearance</label>
-          <input id="first" name="firstAppearance" placeholder="e.g., Issue #1 (fictional)" required />
+        <div class="full">
+          <label for="strengths">Strengths</label>
+          <input id="strengths" name="strengths" placeholder="e.g., chance creation, passing range..." required />
+        </div>
+
+        <div class="full">
+          <label for="weakness">Weakness</label>
+          <input id="weakness" name="weakness" placeholder="e.g., high-risk passing can lead to turnovers" required />
         </div>
 
         <div>
           <label for="image">Image URL</label>
-          <input id="image" name="image" placeholder="https://example.com/image.jpg" required />
+          <input id="image" name="image" placeholder="https://example.com/player.jpg" required />
         </div>
 
         <div class="full">
-          <label for="summary">Short Summary (1–2 sentences)</label>
-          <textarea id="summary" name="summary" placeholder="A short summary for the home page cards..." required></textarea>
+          <label for="summary">Short Summary (for home cards)</label>
+          <textarea id="summary" name="summary" placeholder="1–2 sentences for the home page card..." required></textarea>
         </div>
 
         <div class="full">
-          <label for="bio">Full Background / Bio</label>
-          <textarea id="bio" name="bio" placeholder="Write a longer description for the details page..." required></textarea>
+          <label for="bio">Full Bio (for details page)</label>
+          <textarea id="bio" name="bio" placeholder="Longer player description..." required></textarea>
         </div>
 
         <div class="full actions">
-          <button class="btn primary" type="submit">Submit (demo)</button>
+          <button class="btn primary" type="submit">Submit (Demo)</button>
           <a class="btn" href="index.html">Cancel</a>
         </div>
       </form>
@@ -99,11 +97,10 @@
   </main>
 
   <footer>
-    Note: This is a static prototype, so the submit button does not save data anywhere.
+    Note: Static prototype — submissions are not stored.
   </footer>
 
   <script>
-    // Prevent reload; show a quick demo message.
     document.querySelector("form").addEventListener("submit", (e) => {
       e.preventDefault();
       alert("Submitted! (Demo only — static sites do not store data.)");
@@ -112,3 +109,4 @@
   </script>
 </body>
 </html>
+

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About • Lumenrise Gallery</title>
+  <title>About • Man United Gallery</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -11,7 +11,7 @@
     <div class="navbar">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
-        <span>Lumenrise Gallery</span>
+        <span>Man United Gallery</span>
       </div>
       <nav>
         <a class="navlink" href="index.html">Home</a>
@@ -24,45 +24,48 @@
 
   <main>
     <section class="hero">
-      <h1>About This Static Web App</h1>
+      <h1>About This Project</h1>
       <p>
-        This project is a prototype static website for a fictional character gallery.
-        It uses only HTML, CSS, and JavaScript—no databases or servers—so it runs perfectly on GitHub Pages.
+        This is a static website prototype built for a class assignment. It focuses on a Manchester United themed
+        player gallery and demonstrates the basics of multi-page navigation, layout, and simple JavaScript interactivity.
       </p>
     </section>
 
     <section class="section">
       <div class="kv">
         <div>
-          <h2 style="margin-top:0;">Design Goals</h2>
-          <ul style="color:var(--muted);">
-            <li><strong>Readable:</strong> clear typography, consistent spacing, simple layout.</li>
-            <li><strong>Realistic:</strong> character profiles include role, faction, powers, weaknesses, and background.</li>
-            <li><strong>Usable:</strong> navigation is consistent on every page and the home search filters instantly.</li>
-            <li><strong>Maintainable:</strong> character data is stored in JavaScript arrays for easy updates.</li>
-          </ul>
-
+          <h2 style="margin-top:0;">What this site demonstrates</h2>
           <p style="color:var(--muted);">
-            If this were upgraded to a dynamic app later, the same structure could connect to an API and database.
-            For this assignment, the goal is a clean static prototype that looks professional and is easy to navigate.
+            This project is intentionally “static,” meaning there is no server, no database, and no login.
+            Everything loads instantly from simple files (HTML, CSS, and JavaScript). That makes it perfect for GitHub Pages.
+          </p>
+          <ul style="color:var(--muted);">
+            <li><strong>Home gallery:</strong> 5 players with summaries and a search bar filter.</li>
+            <li><strong>Details page:</strong> deeper profile data for one player and quick links to other pages.</li>
+            <li><strong>About page:</strong> longer explanation and a theme image for a more realistic website feel.</li>
+            <li><strong>Form page:</strong> inputs for all player details (like a real submission form).</li>
+          </ul>
+          <p style="color:var(--muted);">
+            If this were upgraded later, the form could send data to a database and the gallery could pull player
+            information from an API. For this assignment, the goal is clean structure, readability, and deployment success.
           </p>
 
           <div class="actions">
             <a class="btn primary" href="index.html">Go to Home</a>
-            <a class="btn" href="details.html">View Details</a>
-            <a class="btn" href="form.html">Open the Form</a>
+            <a class="btn" href="details.html">Open Details</a>
+            <a class="btn" href="form.html">Open Form</a>
           </div>
         </div>
 
         <div>
-          <h2 style="margin-top:0;">Project Image</h2>
+          <h2 style="margin-top:0;">Theme Image</h2>
           <img
-            src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?auto=format&fit=crop&w=900&q=60"
-            alt="Abstract sci-fi city lights"
+            src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=60"
+            alt="Soccer stadium lights"
             style="width:100%; border-radius:18px; border:1px solid var(--border);"
           />
           <p style="color:var(--muted); margin-bottom:0;">
-            This image supports the sci-fi theme and gives the site a consistent vibe.
+            The theme image supports the football vibe and makes the about page feel complete.
           </p>
         </div>
       </div>
@@ -70,7 +73,8 @@
   </main>
 
   <footer>
-    Static site deployed with GitHub Pages (main branch, root folder).
+    Deployed with GitHub Pages: main branch, root folder.
   </footer>
 </body>
 </html>
+
